@@ -177,11 +177,12 @@ bool ToyShop::SellToy(const Toy value)
         if (size_ != 1)
         {
           ToysGroup *new_pointer = new ToysGroup[size_ - 1];
-          for (int j = 0; j < size_; j++)
+          for (int j = 0, k = 0; j < size_; j++)
           {
             if (j != i)
             {
-              new_pointer[j] = pointer_[j];
+              new_pointer[k] = pointer_[j];
+              k++;
             } //Condition (j != i)
           }   //for loop (j < size_)
           delete[] pointer_;
